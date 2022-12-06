@@ -99,6 +99,7 @@ function arrowKeyNav(e) {
     }
 }
 
+let mobileElements = [];
 function configureMobileGallery() {
     console.log('Configure gallery...');
     const container = document.querySelector('.mobile-container');
@@ -109,9 +110,12 @@ function configureMobileGallery() {
         image.loading = 'lazy';
         image.src = getUrl(imagePath);
         image.classList.add('mobile-image');
-        image.classList.add('fade');
         container.appendChild(image);
+        mobileElements.push(image);
     }
+    setTimeout(() => {
+        fadeIn();
+    }, 500);
 }
 
 function init() {
@@ -147,4 +151,16 @@ window.onload = () => {
     galleryElement = document.getElementById('gallery');
     setImage(currentGallery[0]);
     init();
+}
+
+window.addEventListener('scroll', fadeIn); 
+function fadeIn() {
+    for (const el of mobileElements) {
+        const distInView = el.getBoundingClientRect().top - window.innerHeight + 20;
+        if (distInView < 0) {
+            el.classList.add("fade");
+        } else {
+            el.classList.remove("fade");
+        }
+    }
 }

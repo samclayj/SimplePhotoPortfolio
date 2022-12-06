@@ -14,7 +14,7 @@ header {
     z-index: 999;
 
     height: 5%;
-    min-height: 50px;
+    min-height: 40px;
     font-size: 18px;
 
     border-bottom: 1px solid black;
@@ -79,6 +79,9 @@ body {
     background-position: center; /* Center the image */
     background-size: contain;
     background-repeat: no-repeat; /* Do not repeat the image */
+
+
+    opacity: 0;
 }
 
 @media only screen and (min-width: 1000px) {
