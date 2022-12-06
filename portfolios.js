@@ -106,6 +106,7 @@ function configureMobileGallery() {
     for (const imagePath of currentGallery) {
         console.log(`Adding image ${imagePath}`);
         const image = new Image();
+        image.loading = 'lazy';
         image.src = getUrl(imagePath);
         image.classList.add('mobile-image');
         container.appendChild(image);
