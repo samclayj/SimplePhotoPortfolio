@@ -20,13 +20,13 @@ const fearOfWater = [
 let galleryElement;
 let currentGallery = fearOfWater;
 let galleryIndex = 0;
-
+// Use this to resize the images as needed.
+let width = window.innerWidth;
 
 document.onkeydown = checkKey;
-// document.onclick = nextImage;
 
 function setImage(imagePath) {
-    const url = "url('static/fear_of_water/" + imagePath +"')";
+    const url = "url('static/fear_of_water/" + imagePath + "?nf_resize=fit&w=" + width + ")";
     galleryElement.style.backgroundImage = url;
 }
 
