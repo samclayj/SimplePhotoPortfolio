@@ -25,14 +25,27 @@ let width = window.innerWidth;
 
 document.onkeydown = checkKey;
 
-function setImage(imagePath) {
+function preloadImage(imagePath) {
+    const image = new Image();
+    image.src = url;
+}
+
+function getUrl(imagePath) {
     const url = "url('static/fear_of_water/" + imagePath + "?nf_resize=fit&w=" + Math.round(width * .9) + "')";
-    galleryElement.style.backgroundImage = url;
+}
+
+function setImage(imagePath) {
+    galleryElement.style.backgroundImage = getUrl(imagePath);
+}
+
+function getNextIndex() {
+    return (galleryIndex + 1) % currentGallery.length;
 }
 
 function nextImage() {
-    galleryIndex = (galleryIndex + 1) % currentGallery.length;
+    galleryIndex = getNextIndex();
     setImage(currentGallery[galleryIndex]);
+    preloadImage(currentGallery[getNextIndex()]);
 }
 
 function prevImage() {
