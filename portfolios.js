@@ -18,14 +18,27 @@ const fearOfWater = [
 let galleryElement;
 let currentGallery = fearOfWater;
 let galleryIndex = 0;
+let lastLoaded = 0;
 // Use this to resize the images as needed.
 let width = window.innerWidth;
 
 document.onkeydown = arrowKeyNav;
 
-function preloadImage(imagePath) {
+/**
+ * Netlify CDN/LMS doesn't seemt to cache images with this low request level.
+ * https://answers.netlify.com/t/netlify-large-media-ttfb/48948/13
+ * Try to preload the images to optimize.
+ */
+function preloadImages() {
     preload1 = document.getElementById('pre1');
-    preload1.style.backgroundImage = getUrl(imagePath);
+    preload2 = document.getElementById('pre2');
+    preload3 = document.getElementById('pre3');
+    preload4 = document.getElementById('pre4');
+    preload1.style.backgroundImage = getUrl(currentGallery[incrementPreloadIndex()]);
+    preload2.style.backgroundImage = getUrl(currentGallery[incrementPreloadIndex()]);
+    preload3.style.backgroundImage = getUrl(currentGallery[incrementPreloadIndex()]);
+    preload4.style.backgroundImage = getUrl(currentGallery[incrementPreloadIndex()]);
+
 }
 
 function getUrl(imagePath) {
@@ -36,6 +49,11 @@ function setImage(imagePath) {
     galleryElement.style.backgroundImage = getUrl(imagePath);
 }
 
+function incrementPreloadIndex() {
+    lastLoaded = (lastLoaded + 1) % currentGallery.length;
+    return lastLoaded;
+}
+
 function getNextIndex() {
     return (galleryIndex + 1) % currentGallery.length;
 }
@@ -43,7 +61,9 @@ function getNextIndex() {
 function nextImage() {
     galleryIndex = getNextIndex();
     setImage(currentGallery[galleryIndex]);
-    preloadImage(currentGallery[getNextIndex()]);
+    if (galleryIndex == lastLoaded) {
+        preloadImages();
+    }
 }
 
 function prevImage() {
@@ -68,4 +88,5 @@ window.onload = () => {
     galleryIndex = 0;
     galleryElement = document.getElementById('gallery');
     setImage(currentGallery[0]);
+    preloadImages();
 }
