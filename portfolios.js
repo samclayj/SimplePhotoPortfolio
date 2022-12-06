@@ -22,10 +22,11 @@ let lastLoaded = 0;
 // Use this to resize the images as needed.
 let width = window.innerWidth;
 
-const MOBILE_WIDTH = 768;
+const MOBILE_WIDTH = 1000;
 
 function isMobile() {
-    return width <= 768;
+    console.log(`isMobile? ${width <= MOBILE_WIDTH}`);
+    return width <= MOBILE_WIDTH;
 }
 
 document.onkeydown = arrowKeyNav;
@@ -99,11 +100,11 @@ function arrowKeyNav(e) {
 }
 
 function configureMobileGallery() {
-    console.log('configure gallery');
+    console.log('Configure gallery...');
     const container = document.querySelector('.mobile-container');
     container.innerHTML = '';
     for (const imagePath of currentGallery) {
-        console.log(`adding image ${imagePath}`);
+        console.log(`Adding image ${imagePath}`);
         const image = new Image();
         image.src = getUrl(imagePath);
         image.classList.add('mobile-image');
@@ -122,6 +123,8 @@ function init() {
 }
 
 window.onresize = () => {
+    width = window.innerWidth;
+    console.log(`Resize... ${width}`);
     init();
 }
  
