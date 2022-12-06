@@ -123,13 +123,23 @@ function init() {
     }
 }
 
-window.onresize = () => {
+const debounce = (callback, wait) => {
+  let timeoutId = null;
+  return (...args) => {
+    window.clearTimeout(timeoutId);
+    timeoutId = window.setTimeout(() => {
+      callback.apply(null, args);
+    }, wait);
+  };
+}
+
+window.onresize = debounce((ev) => {
     if (window.innerWidth != width) {
         console.log(`Resize... ${width}`);
         width = window.innerWidth;
         init();
     }
-}
+}, 250);
  
 window.onload = () => {
     galleryIndex = 0;
