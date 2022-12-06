@@ -109,6 +109,7 @@ function configureMobileGallery() {
         image.loading = 'lazy';
         image.src = getUrl(imagePath);
         image.classList.add('mobile-image');
+        image.classList.add('fade');
         container.appendChild(image);
     }
 }
