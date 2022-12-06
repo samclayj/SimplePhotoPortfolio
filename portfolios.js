@@ -104,6 +104,7 @@ function configureMobileGallery() {
     const container = document.querySelector('.mobile-container');
     if (container.innerHtml != '' && isMobile()) {
         console.log('Gallery configured on mobile.');
+        return;
     }
     container.innerHTML = '';
     for (const imagePath of currentGallery) {
