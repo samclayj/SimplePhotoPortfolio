@@ -1,6 +1,4 @@
-/**
- * List portfolios here.
- */
+/** List portfolios here. */
 const fearOfWater = [
     'Meeting 5 - Sam Jentsch 01.jpg',
     'Meeting 5 - Sam Jentsch 02.jpg',
@@ -23,15 +21,15 @@ let galleryIndex = 0;
 // Use this to resize the images as needed.
 let width = window.innerWidth;
 
-document.onkeydown = checkKey;
+document.onkeydown = arrowKeyNav;
 
 function preloadImage(imagePath) {
-    const image = new Image();
-    image.src = url;
+    preload1 = document.getElementById('pre1');
+    preload1.style.backgroundImage = getUrl(imagePath);
 }
 
 function getUrl(imagePath) {
-    const url = "url('static/fear_of_water/" + imagePath + "?nf_resize=fit&w=" + Math.round(width * .9) + "')";
+    return "url('static/fear_of_water/" + imagePath + "?nf_resize=fit&w=" + Math.round(width * .9) + "')";
 }
 
 function setImage(imagePath) {
@@ -53,7 +51,7 @@ function prevImage() {
     setImage(currentGallery[galleryIndex]);
 }
 
-function checkKey(e) {
+function arrowKeyNav(e) {
     console.log('checkling');
     if (e.keyCode == '37') {
        // left arrow
