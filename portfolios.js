@@ -26,7 +26,7 @@ let width = window.innerWidth;
 document.onkeydown = checkKey;
 
 function setImage(imagePath) {
-    const url = "url('static/fear_of_water/" + imagePath + "?nf_resize=fit&w=" + width + ")";
+    const url = "url('static/fear_of_water/" + imagePath + "?nf_resize=fit&w=" + Math.round(width * .9) + "')";
     galleryElement.style.backgroundImage = url;
 }
 
