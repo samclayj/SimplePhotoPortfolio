@@ -22,6 +22,12 @@ let lastLoaded = 0;
 // Use this to resize the images as needed.
 let width = window.innerWidth;
 
+const MOBILE_WIDTH = 768;
+
+function isMobile() {
+    return width <= 768;
+}
+
 document.onkeydown = arrowKeyNav;
 
 /**
@@ -34,19 +40,29 @@ function preloadImages() {
     preload2 = document.getElementById('pre2');
     preload3 = document.getElementById('pre3');
     preload4 = document.getElementById('pre4');
-    preload1.style.backgroundImage = getUrl(currentGallery[incrementPreloadIndex()]);
-    preload2.style.backgroundImage = getUrl(currentGallery[incrementPreloadIndex()]);
-    preload3.style.backgroundImage = getUrl(currentGallery[incrementPreloadIndex()]);
-    preload4.style.backgroundImage = getUrl(currentGallery[incrementPreloadIndex()]);
+    preload1.style.backgroundImage = getCssUrl(currentGallery[incrementPreloadIndex()]);
+    preload2.style.backgroundImage = getCssUrl(currentGallery[incrementPreloadIndex()]);
+    preload3.style.backgroundImage = getCssUrl(currentGallery[incrementPreloadIndex()]);
+    preload4.style.backgroundImage = getCssUrl(currentGallery[incrementPreloadIndex()]);
 
 }
 
 function getUrl(imagePath) {
+    const galleryName = 'fear_of_water';
+    return `static/${galleryName}/${imagePath}?nf_resize=fit&w=${Math.round(width*.9)}`;
     return "url('static/fear_of_water/" + imagePath + "?nf_resize=fit&w=" + Math.round(width * .9) + "')";
 }
 
+function getCssUrl(imagePath) {
+    return `url('${getUrl(imagePath)}')`;
+}
+
 function setImage(imagePath) {
-    galleryElement.style.backgroundImage = getUrl(imagePath);
+    galleryElement.classList.remove('fade');
+    galleryElement.style.backgroundImage = getCssUrl(imagePath);
+    setTimeout(() => {
+        galleryElement.classList.add('fade');
+    }, 100);
 }
 
 function incrementPreloadIndex() {
@@ -72,7 +88,6 @@ function prevImage() {
 }
 
 function arrowKeyNav(e) {
-    console.log('checkling');
     if (e.keyCode == '37') {
        // left arrow
         prevImage();
@@ -82,11 +97,37 @@ function arrowKeyNav(e) {
         nextImage();
     }
 }
+
+function configureMobileGallery() {
+    console.log('configure gallery');
+    const container = document.querySelector('.mobile-container');
+    container.innerHTML = '';
+    for (const imagePath of currentGallery) {
+        console.log(`adding image ${imagePath}`);
+        const image = new Image();
+        image.src = getUrl(imagePath);
+        image.classList.add('mobile-image');
+        container.appendChild(image);
+    }
+}
+
+function init() {
+    if (isMobile()) {
+        // Configure gallery with images appended to DOM.
+        configureMobileGallery();
+    } else {
+        // Configure gallery with paginated images.
+        preloadImages();
+    }
+}
+
+window.onresize = () => {
+    init();
+}
  
 window.onload = () => {
-    console.log('sup');
     galleryIndex = 0;
     galleryElement = document.getElementById('gallery');
     setImage(currentGallery[0]);
-    preloadImages();
+    init();
 }
