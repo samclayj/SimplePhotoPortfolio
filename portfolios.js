@@ -102,6 +102,9 @@ function arrowKeyNav(e) {
 function configureMobileGallery() {
     console.log('Configure gallery...');
     const container = document.querySelector('.mobile-container');
+    if (container.innerHtml != '' && isMobile()) {
+        console.log('Gallery configured on mobile.');
+    }
     container.innerHTML = '';
     for (const imagePath of currentGallery) {
         console.log(`Adding image ${imagePath}`);
