@@ -102,10 +102,6 @@ function arrowKeyNav(e) {
 function configureMobileGallery() {
     console.log('Configure gallery...');
     const container = document.querySelector('.mobile-container');
-    if (container.innerHtml != '' && isMobile()) {
-        console.log('Gallery configured on mobile.');
-        return;
-    }
     container.innerHTML = '';
     for (const imagePath of currentGallery) {
         console.log(`Adding image ${imagePath}`);
@@ -128,9 +124,11 @@ function init() {
 }
 
 window.onresize = () => {
-    width = window.innerWidth;
-    console.log(`Resize... ${width}`);
-    init();
+    if (window.innerWidth != width) {
+        console.log(`Resize... ${width}`);
+        width = window.innerWidth;
+        init();
+    }
 }
  
 window.onload = () => {
