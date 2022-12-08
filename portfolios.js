@@ -30,7 +30,6 @@ function isMobile() {
 }
 
 document.onkeydown = arrowKeyNav;
-document.onclick = closeHeader;
 
 /**
  * Netlify CDN/LMS doesn't seemt to cache images with this low request level.
@@ -138,26 +137,6 @@ const debounce = (callback, wait) => {
     }, wait);
   };
 }
-
-function expandHeader(e) {
-    const nav = document.querySelector('.collapsible-nav')
-
-    if (nav.classList.contains('expanded')) {
-        nav.classList.remove('expanded');
-    } else {
-        nav.classList.add('expanded');
-    }
-    e.preventDefault();
-    e.stopPropagation();
-}
-
-function closeHeader() {
-    const nav = document.querySelector('.collapsible-nav')
-    if (nav.classList.contains('expanded')) {
-        nav.classList.remove('expanded');
-    }
-}
-
 
 window.onresize = debounce((ev) => {
     if (window.innerWidth != width) {

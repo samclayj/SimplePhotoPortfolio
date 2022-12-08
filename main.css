@@ -2,7 +2,8 @@
   --background-color: white;
   --header-color: #F2F2EE;
   --header-font: black;
-  font: normal 1em / 1.5em 'Cutive Mono', monospace;
+  font: normal 1em 'Cutive Mono', monospace;
+  font-size: 30px;
 }
 
 .desktop {
@@ -42,7 +43,7 @@ header {
 }
 
 .current-page:hover {
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .collapsible-nav > div > ul > li:hover {
@@ -82,11 +83,15 @@ header > div {
 .collapsible-nav > div {
     border-bottom: 1px solid black;
     width: 100%;
-    padding: 5px 20px;
+    padding: 10px 20px;
 }
 
 a:visited, a:active, a:link,  a {
     color: black;
+}
+
+a {
+    text-decoration: none;
 }
 
 
@@ -146,6 +151,9 @@ body {
 }
 
 @media only screen and (min-width: 1000px) {
+    :root {
+        font-size: 18px;
+    }
     .desktop {
         display: block;
     }
@@ -259,4 +267,13 @@ footer > div {
 .pre-load {
     z-index:-1000;
     opacity:0;
+}
+
+
+.about-container {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+    top: 40%;
 }
