@@ -138,6 +138,16 @@ const debounce = (callback, wait) => {
   };
 }
 
+function expandHeader() {
+    const nav = document.querySelector('.collapsible-nav')
+
+    if (nav.classList.contains('expanded')) {
+        nav.classList.remove('expanded');
+    } else {
+        nav.classList.add('expanded');
+    }
+}
+
 window.onresize = debounce((ev) => {
     if (window.innerWidth != width) {
         width = window.innerWidth;
