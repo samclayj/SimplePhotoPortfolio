@@ -5,6 +5,13 @@
   font-family: 'Cutive Mono', monospace;
 }
 
+.desktop {
+    display: none;
+}
+.mobile {
+    display: block;
+}
+
 body {
   background-color: var(--background-color);
   margin: 0;
@@ -15,7 +22,7 @@ header {
 
     height: 5%;
     min-height: 40px;
-    font-size: 2.75vw;
+    font-size: 1.2em;
 
     border-bottom: 1px solid black;
     background-color: var(--header-color);
@@ -35,10 +42,21 @@ header > div {
   margin: auto;
 }
 
+a:visited, a:active, a:link,  a {
+    color: black;
+}
+
+
+a:hover {
+    color: black;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 .header-left {
   text-align: left;
-  width: 20%;
-  padding-left: 12px;
+  width: 50%;
+  padding-left: 20px;
 }
 
 .header-center {
@@ -48,8 +66,8 @@ header > div {
 
 .header-right {
   text-align: right;
-  width: 20%;
-  padding-right: 12px;
+  width: 50%;
+  padding-right: 20px;
 }
 
 body {
@@ -85,6 +103,23 @@ body {
 }
 
 @media only screen and (min-width: 1000px) {
+    .desktop {
+        display: block;
+    }
+    .mobile {
+        display: none;
+    }
+
+    .header-left {
+        padding-left: 12px;
+        width: 20%;
+    }
+
+    .header-right {
+        padding-right: 12px;
+        width: 20%;
+    }
+
     header {
         height: 3%;
         min-height: 40px;

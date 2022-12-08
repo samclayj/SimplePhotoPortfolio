@@ -100,7 +100,7 @@ function arrowKeyNav(e) {
 }
 
 let mobileElements = [];
-function configureMobileGallery() {
+function configureMobileGallery(delay) {
     console.log('Configure gallery...');
     const container = document.querySelector('.mobile-container');
     container.innerHTML = '';
@@ -115,13 +115,13 @@ function configureMobileGallery() {
     }
     setTimeout(() => {
         fadeIn();
-    }, 500);
+    }, delay);
 }
 
-function init() {
+function init(delay) {
     if (isMobile()) {
         // Configure gallery with images appended to DOM.
-        configureMobileGallery();
+        configureMobileGallery(delay);
     } else {
         // Configure gallery with paginated images.
         preloadImages();
@@ -140,9 +140,8 @@ const debounce = (callback, wait) => {
 
 window.onresize = debounce((ev) => {
     if (window.innerWidth != width) {
-        console.log(`Resize... ${width}`);
         width = window.innerWidth;
-        init();
+        init(500);
     }
 }, 250);
  
@@ -150,7 +149,7 @@ window.onload = () => {
     galleryIndex = 0;
     galleryElement = document.getElementById('gallery');
     setImage(currentGallery[0]);
-    init();
+    init(1000);
 }
 
 window.addEventListener('scroll', fadeIn); 
