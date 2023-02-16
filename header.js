@@ -159,44 +159,44 @@ a:hover {
 </header>
 `;
 
-class CustomHeader extends HTMLElement{
-  constructor(){
-      super();
-      this.attachShadow({ mode: 'open'});
-      this.shadowRoot.appendChild(template.content.cloneNode(true));
+class CustomHeader extends HTMLElement {
+    constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+        this.shadowRoot.appendChild(template.content.cloneNode(true));
 
-      this.addEventListener('click', e => {
-          this.expandHeader();
-      });
-  } 
+        this.addEventListener('click', e => {
+            this.expandHeader();
+        });
+    }
 
-  highlightCurrentPage() {
-      console.log('highlight current');
-      const elements = this.shadowRoot.querySelectorAll(`[data-page=${this.attributes.page.value}`);
-      console.log(elements);
-      for (const element of elements) {
-          element.classList.add('current-page');
-      }
-  }
- 
-  expandHeader(e) {
-      const nav = this.shadowRoot.querySelector('.collapsible-nav')
-  
-      if (nav.classList.contains('expanded')) {
-          nav.classList.remove('expanded');
-      } else {
-          nav.classList.add('expanded');
-      }
-  }
-  
- connectedCallback(){
-      this.highlightCurrentPage();
-     console.log(window.location.href);
-     console.log(window.location.pathname);
- }
+    highlightCurrentPage() {
+        console.log('highlight current');
+        const elements = this.shadowRoot.querySelectorAll(`[data-page=${this.attributes.page.value}`);
+        console.log(elements);
+        for (const element of elements) {
+            element.classList.add('current-page');
+        }
+    }
 
- render(){
- }
+    expandHeader(e) {
+        const nav = this.shadowRoot.querySelector('.collapsible-nav')
+
+        if (nav.classList.contains('expanded')) {
+            nav.classList.remove('expanded');
+        } else {
+            nav.classList.add('expanded');
+        }
+    }
+
+    connectedCallback() {
+        this.highlightCurrentPage();
+        console.log(window.location.href);
+        console.log(window.location.pathname);
+    }
+
+    render() {
+    }
 }
 window.customElements.define('custom-header', CustomHeader);
 

@@ -50,7 +50,7 @@ function preloadImages() {
 
 function getUrl(imagePath) {
     const galleryName = 'fear_of_water';
-    return `static/${galleryName}/${imagePath}?nf_resize=fit&w=${Math.round(width*.9)}`;
+    return `static/${galleryName}/${imagePath}?nf_resize=fit&w=${Math.round(width * .9)}`;
     return "url('static/fear_of_water/" + imagePath + "?nf_resize=fit&w=" + Math.round(width * .9) + "')";
 }
 
@@ -90,11 +90,11 @@ function prevImage() {
 
 function arrowKeyNav(e) {
     if (e.keyCode == '37') {
-       // left arrow
+        // left arrow
         prevImage();
     }
     else if (e.keyCode == '39') {
-       // right arrow
+        // right arrow
         nextImage();
     }
 }
@@ -129,13 +129,13 @@ function init(delay) {
 }
 
 const debounce = (callback, wait) => {
-  let timeoutId = null;
-  return (...args) => {
-    window.clearTimeout(timeoutId);
-    timeoutId = window.setTimeout(() => {
-      callback.apply(null, args);
-    }, wait);
-  };
+    let timeoutId = null;
+    return (...args) => {
+        window.clearTimeout(timeoutId);
+        timeoutId = window.setTimeout(() => {
+            callback.apply(null, args);
+        }, wait);
+    };
 }
 
 window.onresize = debounce((ev) => {
@@ -144,7 +144,7 @@ window.onresize = debounce((ev) => {
         init(500);
     }
 }, 250);
- 
+
 window.onload = () => {
     galleryIndex = 0;
     galleryElement = document.getElementById('gallery');
@@ -152,7 +152,7 @@ window.onload = () => {
     init(1000);
 }
 
-window.addEventListener('scroll', fadeIn); 
+window.addEventListener('scroll', fadeIn);
 function fadeIn() {
     for (const el of mobileElements) {
         const distInView = el.getBoundingClientRect().top - window.innerHeight + 20;
