@@ -1,12 +1,12 @@
 # SimplePhotoPortfolio
 
-  [Netlify](https://app.netlify.com/sites/inquisitive-zabaione-447fd7/overview) 
+[Netlify](https://app.netlify.com/sites/inquisitive-zabaione-447fd7/overview) 
 
-  [Github](https://github.com/samclayj/SimplePhotoPortfolio/tree/main) 
+[Github](https://github.com/samclayj/SimplePhotoPortfolio/tree/main) 
 
-  [Netlify large Media Support](https://app.netlify.com/sites/inquisitive-zabaione-447fd7/large-media) 
+[Netlify large Media Support](https://app.netlify.com/sites/inquisitive-zabaione-447fd7/large-media) 
 
- [https://app.netlify.com/sites/inquisitive-zabaione-447fd7/overview](https://app.netlify.com/sites/inquisitive-zabaione-447fd7/overview) 
+[https://app.netlify.com/sites/inquisitive-zabaione-447fd7/overview](https://app.netlify.com/sites/inquisitive-zabaione-447fd7/overview) 
 
 **Netlify for Photo Portfolio**
 
@@ -21,8 +21,8 @@ Prereqs/Configuration:
 - Install [Git Large File Storage](https://git-lfs.github.com).
 - Install and configure [Netlify CLI](https://docs.netlify.com/cli/get-started/#authentication).
 - [Netlify Configure Large Media](https://docs.netlify.com/large-media/setup/)
-  - Link Git project to Netlify
-  - Run large media setup
+- Link Git project to Netlify
+- Run large media setup
 
 ## Adding Images
 
