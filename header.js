@@ -10,9 +10,10 @@ function define(html) {
       const shadow = this.attachShadow({ mode: 'open' });
       shadow.innerHTML = html;
 
-      this.addEventListener('click', e => {
-        this.expandHeader();
-      });
+      this.shadowRoot.querySelector('.hamburger-button')
+        .addEventListener('click', e => {
+          this.expandHeader();
+        });
     }
 
     highlightCurrentPage() {

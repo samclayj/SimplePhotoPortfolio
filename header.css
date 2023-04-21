@@ -5,6 +5,10 @@
   display: block;
 }
 
+.hamburger-button {
+  cursor: pointer;
+}
+
 header {
   z-index: 999;
 
