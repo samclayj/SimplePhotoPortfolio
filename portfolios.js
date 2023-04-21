@@ -82,7 +82,7 @@ function definePortfolio(html) {
       this.galleryIndex = 0;
       this.galleryElement = this.shadowRoot.getElementById('gallery');
       this.setImage(this.currentGallery[0]);
-      this.init(1500);
+      this.init(2000);
     }
 
     isMobile() {
