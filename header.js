@@ -16,9 +16,7 @@ function define(html) {
     }
 
     highlightCurrentPage() {
-      console.log('highlight current');
       const elements = this.shadowRoot.querySelectorAll(`[data-page=${this.attributes.page.value}`);
-      console.log(elements);
       for (const element of elements) {
         element.classList.add('current-page');
       }
@@ -36,11 +34,6 @@ function define(html) {
 
     connectedCallback() {
       this.highlightCurrentPage();
-      console.log(window.location.href);
-      console.log(window.location.pathname);
-    }
-
-    render() {
     }
   }
   window.customElements.define('custom-header', CustomHeader);
