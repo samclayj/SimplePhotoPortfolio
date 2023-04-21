@@ -66,7 +66,7 @@ function definePortfolio(html) {
       window.addEventListener('scroll', debounce(e => {
         console.log('scroll');
         this.fadeIn();
-      }, 100));
+      }, 10));
       window.addEventListener('resize', debounce(e => {
         console.log('resize');
         if (window.innerWidth != this.width) {
