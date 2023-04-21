@@ -40,4 +40,8 @@ Then commit and push to origin. The files in the repo will just be text files, a
 - [Transforming Images](https://docs.netlify.com/large-media/transform-images/)
 
 
+# Local Development
 
+```
+python3 -m http.server 8000
+```
