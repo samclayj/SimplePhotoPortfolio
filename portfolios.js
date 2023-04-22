@@ -15,6 +15,10 @@ const fearOfWater = [
   'Meeting 5 - Sam Jentsch 13.jpg',
 ];
 
+const galleries = {
+  'fearofwater' : fearOfWater,
+}
+
 const MOBILE_WIDTH = 1000;
 
 const debounce = (callback, wait) => {
@@ -51,17 +55,30 @@ function definePortfolio(html) {
 
       this.mobileElements = [];
       this.galleryElement = this.shadowRoot.getElementById('gallery');
-      this.currentGallery = fearOfWater;
+
+      const selectedGallery = this.attributes.gallery.value;
+      this.currentGallery = galleries[selectedGallery];
+
       this.galleryIndex = 0;
       this.lastLoaded = 0;
 
       // Use this to resize the images as needed.
       this.width = window.innerWidth;
 
+      this.shadowRoot.querySelector('.portfolio-container')
+        .addEventListener('click', e => {
+          this.nextImage();
+        });
       this.shadowRoot.querySelector('.footer-left')
-        .addEventListener('click', e => {this.nextImage()});
+        .addEventListener('click', e => {
+          this.prevImage();
+          e.stopPropagation();
+        });
       this.shadowRoot.querySelector('.footer-right')
-        .addEventListener('click', e => {this.prevImage()});
+        .addEventListener('click', e => {
+          this.nextImage();
+          e.stopPropagation();
+        });
       document.addEventListener('keydown', e => this.arrowKeyNav(e))
       window.addEventListener('scroll', debounce(e => {
         console.log('scroll');
@@ -132,7 +149,8 @@ function definePortfolio(html) {
     }
 
     prevImage() {
-      this.galleryIndex = this.galleryIndex != 0 ? this.galleryIndex - 1 : this.currentGallery.length - 1;
+      this.galleryIndex = this.galleryIndex != 0 ? this.galleryIndex - 1 :
+        this.currentGallery.length - 1;
       this.setImage(this.currentGallery[this.galleryIndex]);
     }
 

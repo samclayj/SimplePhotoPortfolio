@@ -10,25 +10,41 @@ function define(html) {
       const shadow = this.attachShadow({ mode: 'open' });
       shadow.innerHTML = html;
 
-      this.shadowRoot.querySelector('.hamburger-button')
+      const projectTitle = this.attributes.project ?
+        this.attributes.project.value : '';
+      this.shadowRoot.querySelector('.project-title')
+        .innerHTML = projectTitle;
+
+      this.shadowRoot.querySelector('.toggle-button')
         .addEventListener('click', e => {
           this.expandHeader();
+          e.stopPropagation();
+        });
+      this.shadowRoot.querySelector('.project-title')
+        .addEventListener('click', e => {
+          this.expandHeader();
+          e.stopPropagation();
         });
     }
 
     highlightCurrentPage() {
-      const elements = this.shadowRoot.querySelectorAll(`[data-page=${this.attributes.page.value}`);
+      const currentPage = this.attributes.page.value;
+      const elements =
+        this.shadowRoot.querySelectorAll(`[data-page=${currentPage}`);
       for (const element of elements) {
         element.classList.add('current-page');
       }
     }
 
     expandHeader(e) {
-      const nav = this.shadowRoot.querySelector('.collapsible-nav')
+      const nav = this.shadowRoot.querySelector('.collapsible-nav');
+      const button = this.shadowRoot.querySelector('.toggle-button');
 
       if (nav.classList.contains('expanded')) {
+        button.innerText = '+';
         nav.classList.remove('expanded');
       } else {
+        button.innerText = '-';
         nav.classList.add('expanded');
       }
     }
