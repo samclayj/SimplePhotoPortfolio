@@ -37,8 +37,8 @@ function getUrl(imagePath, width) {
   return "url('static/fear_of_water/" + imagePath + "?nf_resize=fit&w=" + Math.round(width * .9) + "')";
 }
 
-function getCssUrl(imagePath) {
-  return `url('${getUrl(imagePath)}')`;
+function getCssUrl(imagePath, width) {
+  return `url('${getUrl(imagePath, width)}')`;
 }
 
 
@@ -116,16 +116,16 @@ function definePortfolio(html) {
       let preload2 = this.shadowRoot.getElementById('pre2');
       let preload3 = this.shadowRoot.getElementById('pre3');
       let preload4 = this.shadowRoot.getElementById('pre4');
-      preload1.style.backgroundImage = getCssUrl(this.currentGallery[this.incrementPreloadIndex()]);
-      preload2.style.backgroundImage = getCssUrl(this.currentGallery[this.incrementPreloadIndex()]);
-      preload3.style.backgroundImage = getCssUrl(this.currentGallery[this.incrementPreloadIndex()]);
-      preload4.style.backgroundImage = getCssUrl(this.currentGallery[this.incrementPreloadIndex()]);
+      preload1.style.backgroundImage = getCssUrl(this.currentGallery[this.incrementPreloadIndex()], this.width);
+      preload2.style.backgroundImage = getCssUrl(this.currentGallery[this.incrementPreloadIndex()], this.width);
+      preload3.style.backgroundImage = getCssUrl(this.currentGallery[this.incrementPreloadIndex()], this.width);
+      preload4.style.backgroundImage = getCssUrl(this.currentGallery[this.incrementPreloadIndex()], this.width);
 
     }
 
     setImage(imagePath) {
       this.galleryElement.classList.remove('fade');
-      this.galleryElement.style.backgroundImage = getCssUrl(imagePath);
+      this.galleryElement.style.backgroundImage = getCssUrl(imagePath, this.width);
       setTimeout(() => {
         this.galleryElement.classList.add('fade');
       }, 100);
