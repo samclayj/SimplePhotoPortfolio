@@ -15,8 +15,27 @@ const fearOfWater = [
   'Meeting 5 - Sam Jentsch 13.jpg',
 ];
 
+const urbanBayou = [
+  'Urban Bayou-1.jpg',
+  'Urban Bayou-2.jpg',
+  'Urban Bayou-3.jpg',
+  'Urban Bayou-4.jpg',
+  'Urban Bayou-5.jpg',
+  'Urban Bayou-6.jpg',
+  'Urban Bayou-7.jpg',
+  'Urban Bayou-8.jpg',
+  'Urban Bayou-9.jpg',
+  'Urban Bayou-10.jpg',
+  'Urban Bayou-11.jpg',
+  'Urban Bayou-12.jpg',
+  'Urban Bayou-13.jpg',
+  'Urban Bayou-14.jpg',
+];
+
+
 const galleries = {
-  'fearofwater' : fearOfWater,
+  'fear_of_water' : fearOfWater,
+  'urban_bayou' : urbanBayou,
 }
 
 const MOBILE_WIDTH = 1000;
@@ -31,14 +50,13 @@ const debounce = (callback, wait) => {
   };
 }
 
-function getUrl(imagePath, width) {
-  const galleryName = 'fear_of_water';
+function getUrl(galleryName, imagePath, width) {
+  console.log('get url for: ' + imagePath);
   return `static/${galleryName}/${imagePath}?nf_resize=fit&w=${Math.round(width * .9)}`;
-  return "url('static/fear_of_water/" + imagePath + "?nf_resize=fit&w=" + Math.round(width * .9) + "')";
 }
 
-function getCssUrl(imagePath, width) {
-  return `url('${getUrl(imagePath, width)}')`;
+function getCssUrl(galleryName, imagePath, width) {
+  return `url('${getUrl(galleryName, imagePath, width)}')`;
 }
 
 
@@ -57,6 +75,7 @@ function definePortfolio(html) {
       this.galleryElement = this.shadowRoot.getElementById('gallery');
 
       const selectedGallery = this.attributes.gallery.value;
+      this.galleryName = selectedGallery;
       this.currentGallery = galleries[selectedGallery];
 
       this.galleryIndex = 0;
@@ -116,16 +135,15 @@ function definePortfolio(html) {
       let preload2 = this.shadowRoot.getElementById('pre2');
       let preload3 = this.shadowRoot.getElementById('pre3');
       let preload4 = this.shadowRoot.getElementById('pre4');
-      preload1.style.backgroundImage = getCssUrl(this.currentGallery[this.incrementPreloadIndex()], this.width);
-      preload2.style.backgroundImage = getCssUrl(this.currentGallery[this.incrementPreloadIndex()], this.width);
-      preload3.style.backgroundImage = getCssUrl(this.currentGallery[this.incrementPreloadIndex()], this.width);
-      preload4.style.backgroundImage = getCssUrl(this.currentGallery[this.incrementPreloadIndex()], this.width);
-
+      preload1.style.backgroundImage = getCssUrl(this.galleryName, this.currentGallery[this.incrementPreloadIndex()], this.width);
+      preload2.style.backgroundImage = getCssUrl(this.galleryName, this.currentGallery[this.incrementPreloadIndex()], this.width);
+      preload3.style.backgroundImage = getCssUrl(this.galleryName, this.currentGallery[this.incrementPreloadIndex()], this.width);
+      preload4.style.backgroundImage = getCssUrl(this.galleryName, this.currentGallery[this.incrementPreloadIndex()], this.width);
     }
 
     setImage(imagePath) {
       this.galleryElement.classList.remove('fade');
-      this.galleryElement.style.backgroundImage = getCssUrl(imagePath, this.width);
+      this.galleryElement.style.backgroundImage = getCssUrl(this.galleryName, imagePath, this.width);
       setTimeout(() => {
         this.galleryElement.classList.add('fade');
       }, 100);
@@ -141,6 +159,7 @@ function definePortfolio(html) {
     }
 
     nextImage() {
+      console.log('next image');
       this.galleryIndex = this.getNextIndex();
       this.setImage(this.currentGallery[this.galleryIndex]);
       if (this.galleryIndex == this.lastLoaded) {
@@ -172,7 +191,7 @@ function definePortfolio(html) {
         console.log(`Adding image ${imagePath}`);
         const image = new Image();
         image.loading = 'lazy';
-        image.src = getUrl(imagePath, this.width);
+        image.src = getUrl(this.galleryName, imagePath, this.width);
         image.classList.add('mobile-image');
         container.appendChild(image);
         this.mobileElements.push(image);
