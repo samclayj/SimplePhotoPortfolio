@@ -103,6 +103,7 @@ function definePortfolio(html) {
         console.log('scroll');
         this.fadeIn();
       }, 10));
+
       window.addEventListener('resize', debounce(e => {
         console.log('resize');
         if (window.innerWidth != this.width) {
@@ -185,13 +186,17 @@ function definePortfolio(html) {
     }
 
     configureMobileGallery(delay) {
+      // Ignore resize events if the min-width is already configured to a mobile
+      // size.
+      if (this.width <= MOBILE_WIDTH) return;
+
       const container = this.shadowRoot.querySelector('.mobile-container');
       container.innerHTML = '';
       for (const imagePath of this.currentGallery) {
         console.log(`Adding image ${imagePath}`);
         const image = new Image();
         image.loading = 'lazy';
-        image.src = getUrl(this.galleryName, imagePath, this.width);
+        image.src = getUrl(this.galleryName, imagePath, 1000);
         image.classList.add('mobile-image');
         container.appendChild(image);
         this.mobileElements.push(image);
