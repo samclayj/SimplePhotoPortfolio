@@ -39,6 +39,7 @@ const galleries = {
 }
 
 const MOBILE_WIDTH = 1000;
+const DESKTOP_WIDTH = 4000;
 
 const debounce = (callback, wait) => {
   let timeoutId = null;
@@ -100,13 +101,15 @@ function definePortfolio(html) {
         });
       document.addEventListener('keydown', e => this.arrowKeyNav(e))
       window.addEventListener('scroll', debounce(e => {
-        console.log('scroll');
         this.fadeIn();
       }, 10));
 
       window.addEventListener('resize', debounce(e => {
-        console.log('resize');
-        if (window.innerWidth != this.width) {
+        // Only resize if the mobile width boundary is crossed.
+        if (this.width > MOBILE_WIDTH && window.innerWidth <= MOBILE_WIDTH) {
+          this.width = window.innerWidth;
+          this.init(1000);
+        } else if (this.width <= MOBILE_WIDTH && window.innerWidth > MOBILE_WIDTH) {
           this.width = window.innerWidth;
           this.init(1000);
         }
@@ -136,15 +139,19 @@ function definePortfolio(html) {
       let preload2 = this.shadowRoot.getElementById('pre2');
       let preload3 = this.shadowRoot.getElementById('pre3');
       let preload4 = this.shadowRoot.getElementById('pre4');
-      preload1.style.backgroundImage = getCssUrl(this.galleryName, this.currentGallery[this.incrementPreloadIndex()], this.width);
-      preload2.style.backgroundImage = getCssUrl(this.galleryName, this.currentGallery[this.incrementPreloadIndex()], this.width);
-      preload3.style.backgroundImage = getCssUrl(this.galleryName, this.currentGallery[this.incrementPreloadIndex()], this.width);
-      preload4.style.backgroundImage = getCssUrl(this.galleryName, this.currentGallery[this.incrementPreloadIndex()], this.width);
+      preload1.style.backgroundImage = getCssUrl(this.galleryName, this.currentGallery[this.incrementPreloadIndex()], DESKTOP_WIDTH);
+      preload2.style.backgroundImage = getCssUrl(this.galleryName, this.currentGallery[this.incrementPreloadIndex()], DESKTOP_WIDTH);
+      preload3.style.backgroundImage = getCssUrl(this.galleryName, this.currentGallery[this.incrementPreloadIndex()], DESKTOP_WIDTH);
+      preload4.style.backgroundImage = getCssUrl(this.galleryName, this.currentGallery[this.incrementPreloadIndex()], DESKTOP_WIDTH);
     }
 
     setImage(imagePath) {
       this.galleryElement.classList.remove('fade');
-      this.galleryElement.style.backgroundImage = getCssUrl(this.galleryName, imagePath, this.width);
+      if (this.isMobile()) {
+        this.galleryElement.style.backgroundImage = getCssUrl(this.galleryName, imagePath, MOBILE_WIDTH);
+      } else {
+        this.galleryElement.style.backgroundImage = getCssUrl(this.galleryName, imagePath, DESKTOP_WIDTH);
+      }
       setTimeout(() => {
         this.galleryElement.classList.add('fade');
       }, 100);
@@ -188,7 +195,6 @@ function definePortfolio(html) {
     configureMobileGallery(delay) {
       // Ignore resize events if the min-width is already configured to a mobile
       // size.
-      if (this.width <= MOBILE_WIDTH) return;
 
       const container = this.shadowRoot.querySelector('.mobile-container');
       container.innerHTML = '';
@@ -196,7 +202,7 @@ function definePortfolio(html) {
         console.log(`Adding image ${imagePath}`);
         const image = new Image();
         image.loading = 'lazy';
-        image.src = getUrl(this.galleryName, imagePath, 1000);
+        image.src = getUrl(this.galleryName, imagePath, MOBILE_WIDTH);
         image.classList.add('mobile-image');
         container.appendChild(image);
         this.mobileElements.push(image);
