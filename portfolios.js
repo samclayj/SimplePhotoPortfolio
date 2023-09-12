@@ -60,7 +60,6 @@ function getCssUrl(galleryName, imagePath, width) {
   return `url('${getUrl(galleryName, imagePath, width)}')`;
 }
 
-
 fetch("portfolio.html")
   .then(stream => stream.text())
   .then(text => definePortfolio(text));
