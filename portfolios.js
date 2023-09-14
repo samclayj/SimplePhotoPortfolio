@@ -53,7 +53,7 @@ const debounce = (callback, wait) => {
 
 function getUrl(galleryName, imagePath, width) {
   console.log('get url for: ' + imagePath);
-  return `static/${galleryName}/${imagePath}?nf_resize=fit&w=${Math.round(width * .9)}`;
+  return `static/${galleryName}/${imagePath}?nf_resize=fit&w=${width}`;
 }
 
 function getCssUrl(galleryName, imagePath, width) {
