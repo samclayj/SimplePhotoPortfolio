@@ -18,28 +18,27 @@ const fearOfWater = [
 
 // Add support for the mobile images. Probably rename.
 const urbanBayou = [
-  'Big Rich Desktop-1.jpg',
-  'Big Rich Desktop-2.jpg',
-  'Big Rich Desktop-3.jpg',
-  'Big Rich Desktop-4.jpg',
-  'Big Rich Desktop-5.jpg',
-  'Big Rich Desktop-6.jpg',
-  'Big Rich Desktop-7.jpg',
-  'Big Rich Desktop-8.jpg',
-  'Big Rich Desktop-9.jpg',
-  'Big Rich Desktop-10.jpg',
-  'Big Rich Desktop-11.jpg',
-  'Big Rich Desktop-12.jpg',
-  'Big Rich Desktop-13.jpg',
-  'Big Rich Desktop-14.jpg',
-  'Big Rich Desktop-15.jpg',
-  'Big Rich Desktop-16.jpg',
-  'Big Rich Desktop-17.jpg',
-  'Big Rich Desktop-18.jpg',
-  'Big Rich Desktop-19.jpg',
-  'Big Rich Desktop-20.jpg',
+  'Big Rich-1.jpg',
+  'Big Rich-2.jpg',
+  'Big Rich-3.jpg',
+  'Big Rich-4.jpg',
+  'Big Rich-5.jpg',
+  'Big Rich-6.jpg',
+  'Big Rich-7.jpg',
+  'Big Rich-8.jpg',
+  'Big Rich-9.jpg',
+  'Big Rich-10.jpg',
+  'Big Rich-11.jpg',
+  'Big Rich-12.jpg',
+  'Big Rich-13.jpg',
+  'Big Rich-14.jpg',
+  'Big Rich-15.jpg',
+  'Big Rich-16.jpg',
+  'Big Rich-17.jpg',
+  'Big Rich-18.jpg',
+  'Big Rich-19.jpg',
+  'Big Rich-20.jpg',
 ];
-
 
 const galleries = {
   'fear_of_water' : fearOfWater,
@@ -59,13 +58,12 @@ const debounce = (callback, wait) => {
   };
 }
 
-function getUrl(galleryName, imagePath, width) {
-  console.log('get url for: ' + imagePath);
-  return `images/${galleryName}/${imagePath}`;
+function getImageUrl(galleryName, format, imagePath) {
+  return `images/${galleryName}/${format}/${imagePath}`
 }
 
-function getCssUrl(galleryName, imagePath, width) {
-  return `url('${getUrl(galleryName, imagePath, width)}')`;
+function getCssUrl(galleryName, format, imagePath) {
+  return `url('images/${galleryName}/${format}/${imagePath}')`
 }
 
 fetch("portfolio.html")
@@ -147,18 +145,18 @@ function definePortfolio(html) {
       let preload2 = this.shadowRoot.getElementById('pre2');
       let preload3 = this.shadowRoot.getElementById('pre3');
       let preload4 = this.shadowRoot.getElementById('pre4');
-      preload1.style.backgroundImage = getCssUrl(this.galleryName, this.currentGallery[this.incrementPreloadIndex()], DESKTOP_WIDTH);
-      preload2.style.backgroundImage = getCssUrl(this.galleryName, this.currentGallery[this.incrementPreloadIndex()], DESKTOP_WIDTH);
-      preload3.style.backgroundImage = getCssUrl(this.galleryName, this.currentGallery[this.incrementPreloadIndex()], DESKTOP_WIDTH);
-      preload4.style.backgroundImage = getCssUrl(this.galleryName, this.currentGallery[this.incrementPreloadIndex()], DESKTOP_WIDTH);
+      preload1.style.backgroundImage = getCssUrl(this.galleryName, 'desktop', this.currentGallery[this.incrementPreloadIndex()]);
+      preload2.style.backgroundImage = getCssUrl(this.galleryName, 'desktop', this.currentGallery[this.incrementPreloadIndex()]);
+      preload3.style.backgroundImage = getCssUrl(this.galleryName, 'desktop', this.currentGallery[this.incrementPreloadIndex()]);
+      preload4.style.backgroundImage = getCssUrl(this.galleryName, 'desktop', this.currentGallery[this.incrementPreloadIndex()]);
     }
 
     setImage(imagePath) {
       this.galleryElement.classList.remove('fade');
       if (this.isMobile()) {
-        this.galleryElement.style.backgroundImage = getCssUrl(this.galleryName, imagePath, MOBILE_WIDTH);
+        this.galleryElement.style.backgroundImage = getCssUrl(this.galleryName, 'mobile', imagePath);
       } else {
-        this.galleryElement.style.backgroundImage = getCssUrl(this.galleryName, imagePath, DESKTOP_WIDTH);
+        this.galleryElement.style.backgroundImage = getCssUrl(this.galleryName, 'desktop', imagePath);
       }
       setTimeout(() => {
         this.galleryElement.classList.add('fade');
@@ -210,7 +208,7 @@ function definePortfolio(html) {
         console.log(`Adding image ${imagePath}`);
         const image = new Image();
         image.loading = 'lazy';
-        image.src = getUrl(this.galleryName, imagePath, MOBILE_WIDTH);
+        image.src = getImageUrl(this.galleryName, 'mobile', imagePath);
         image.classList.add('mobile-image');
         container.appendChild(image);
         this.mobileElements.push(image);
