@@ -15,21 +15,29 @@ const fearOfWater = [
   'Meeting 5 - Sam Jentsch 13.jpg',
 ];
 
+
+// Add support for the mobile images. Probably rename.
 const urbanBayou = [
-  'Urban Bayou-1.jpg',
-  'Urban Bayou-2.jpg',
-  'Urban Bayou-3.jpg',
-  'Urban Bayou-4.jpg',
-  'Urban Bayou-5.jpg',
-  'Urban Bayou-6.jpg',
-  'Urban Bayou-7.jpg',
-  'Urban Bayou-8.jpg',
-  'Urban Bayou-9.jpg',
-  'Urban Bayou-10.jpg',
-  'Urban Bayou-11.jpg',
-  'Urban Bayou-12.jpg',
-  'Urban Bayou-13.jpg',
-  'Urban Bayou-14.jpg',
+  'Big Rich Desktop-1.jpg',
+  'Big Rich Desktop-2.jpg',
+  'Big Rich Desktop-3.jpg',
+  'Big Rich Desktop-4.jpg',
+  'Big Rich Desktop-5.jpg',
+  'Big Rich Desktop-6.jpg',
+  'Big Rich Desktop-7.jpg',
+  'Big Rich Desktop-8.jpg',
+  'Big Rich Desktop-9.jpg',
+  'Big Rich Desktop-10.jpg',
+  'Big Rich Desktop-11.jpg',
+  'Big Rich Desktop-12.jpg',
+  'Big Rich Desktop-13.jpg',
+  'Big Rich Desktop-14.jpg',
+  'Big Rich Desktop-15.jpg',
+  'Big Rich Desktop-16.jpg',
+  'Big Rich Desktop-17.jpg',
+  'Big Rich Desktop-18.jpg',
+  'Big Rich Desktop-19.jpg',
+  'Big Rich Desktop-20.jpg',
 ];
 
 
@@ -38,8 +46,8 @@ const galleries = {
   'urban_bayou' : urbanBayou,
 }
 
-const MOBILE_WIDTH = 400;
-const DESKTOP_WIDTH = 800;
+const MOBILE_WIDTH = 800;
+const DESKTOP_WIDTH = 1600;
 
 const debounce = (callback, wait) => {
   let timeoutId = null;
@@ -53,7 +61,7 @@ const debounce = (callback, wait) => {
 
 function getUrl(galleryName, imagePath, width) {
   console.log('get url for: ' + imagePath);
-  return `static/${galleryName}/${imagePath}?nf_resize=fit&w=${width}`;
+  return `images/${galleryName}/${imagePath}`;
 }
 
 function getCssUrl(galleryName, imagePath, width) {
@@ -125,6 +133,7 @@ function definePortfolio(html) {
     }
 
     isMobile() {
+      console.log("MOBILE");
       return this.width <= MOBILE_WIDTH;
     }
 
