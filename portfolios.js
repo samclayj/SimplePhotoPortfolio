@@ -38,8 +38,8 @@ const galleries = {
   'urban_bayou' : urbanBayou,
 }
 
-const MOBILE_WIDTH = 500;
-const DESKTOP_WIDTH = 1600;
+const MOBILE_WIDTH = 400;
+const DESKTOP_WIDTH = 800;
 
 const debounce = (callback, wait) => {
   let timeoutId = null;
