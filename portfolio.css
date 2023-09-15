@@ -60,7 +60,7 @@ body {
   /* Do not repeat the image */
 
 
-  opacity: 0;
+  opacity: 1;
 }
 
 @media only screen and (min-width: 1000px) {
@@ -146,14 +146,14 @@ body {
   top: 50%;
   left: 50%;
 
-  opacity: 0;
+  opacity: 1;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 
 @keyframes fade-in {
   0% {
-    opacity: 0;
+    opacity: 1;
   }
 
   100% {
