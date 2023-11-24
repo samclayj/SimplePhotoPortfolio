@@ -71,6 +71,22 @@ body {
   opacity: 0;
 }
 
+.statement-image {
+  height: 50%;
+  width: 100%;
+  background-position: center;
+  /* Center the image */
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* Do not repeat the image */
+  margin: 0;
+  opacity: 1;
+}
+
+#statement-image-1 {
+  background-image: url('images/urban_bayou/statement/Statement-1.jpg');
+}
+
 @media only screen and (min-width: 1000px) {
   :root {
     font-size: 18px;
@@ -142,7 +158,10 @@ body {
   .about-container {
     top: 30% !important;
   }
-
+  
+  .statement-image {
+    height: 70% !important;
+  }
 }
 
 .image-centered {
@@ -206,18 +225,3 @@ footer>div {
   top: 5%;
 }
 
-.statement-image {
-  height: 70%;
-  width: 100%;
-  background-position: center;
-  /* Center the image */
-  background-size: contain;
-  background-repeat: no-repeat;
-  /* Do not repeat the image */
-  margin: 0;
-  opacity: 1;
-}
-
-#statement-image-1 {
-  background-image: url('images/urban_bayou/statement/Statement-1.jpg');
-}
