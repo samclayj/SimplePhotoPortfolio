@@ -38,12 +38,6 @@ const urbanBayou = [
   'Big Rich-18.jpg',
   'Big Rich-19.jpg',
   'Big Rich-20.jpg',
-  'Big Rich-21.jpg',
-  'Big Rich-22.jpg',
-  'Big Rich-23.jpg',
-  'Big Rich-24.jpg',
-  'Big Rich-25.jpg',
-  'Big Rich-26.jpg',
 ];
 
 const galleries = {
