@@ -188,5 +188,13 @@ footer>div {
   max-width: 800px;
   margin: auto;
   position: relative;
-  top: 40%;
+  top: 30%;
+}
+
+.statement-container {
+  width: 90%;
+  max-width: 700px;
+  margin: auto;
+  position: relative;
+  top: 25%;
 }
