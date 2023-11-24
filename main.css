@@ -139,6 +139,10 @@ body {
     padding-right: 7px;
   }
 
+  .about-container {
+    top: 30% !important;
+  }
+
 }
 
 .image-centered {
