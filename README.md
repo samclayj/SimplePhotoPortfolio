@@ -6,9 +6,20 @@
 
 [https://app.netlify.com/sites/inquisitive-zabaione-447fd7/overview](https://app.netlify.com/sites/inquisitive-zabaione-447fd7/overview) 
 
+Analytics
+
 **Netlify for Photo Portfolio**
 
 * This combined with the Netlify CDN, and Fastmail for email should totally satisfy my entire photo portfolio use-case, for way less than the Squarespace cost (~$20/month). Plus, it’s more customizable and low maintenance with the “deploy on git push” options.
+
+
+## Analytics
+
+```
+<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d7f82315a5604e958e332e87ffab3751"}'></script>
+```
+https://dash.cloudflare.com/3e92a3a750c40e42eb80946af251cc1f/web-analytics/overview?siteTag~in=41463afbbce24e05a9b5c401efdaa9c1&excludeBots=Yes
 
 ## Portfolio README
 
