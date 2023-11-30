@@ -160,7 +160,7 @@ body {
   }
   
   .statement-image {
-    height: 70% !important;
+    width: 100% !important;
   }
 }
 
