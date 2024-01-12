@@ -206,12 +206,15 @@ footer>div {
   opacity: 0;
 }
 
+.center-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
 .about-container {
-  width: 90%;
   max-width: 800px;
-  margin: auto;
-  position: relative;
-  top: 10%;
 }
 
 .statement-container {
