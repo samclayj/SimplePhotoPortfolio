@@ -17,14 +17,22 @@ function define(html) {
 
       this.shadowRoot.querySelector('.toggle-button')
         .addEventListener('click', e => {
-          this.expandHeader();
+          this.toggleHeader();
           e.stopPropagation();
         });
       this.shadowRoot.querySelector('.project-title')
         .addEventListener('click', e => {
-          this.expandHeader();
+          this.toggleHeader();
           e.stopPropagation();
         });
+      this.addEventListener('mouseenter', e => {
+          this.expandHeader();
+          e.stopPropagation();
+      });
+      this.addEventListener('mouseleave', e => {
+          this.collapseHeader();
+          e.stopPropagation();
+      });
     }
 
     highlightCurrentPage() {
@@ -36,16 +44,33 @@ function define(html) {
       }
     }
 
-    expandHeader(e) {
+    collapseHeader(e) {
       const nav = this.shadowRoot.querySelector('.collapsible-nav');
       const button = this.shadowRoot.querySelector('.toggle-button');
 
       if (nav.classList.contains('expanded')) {
         button.innerText = '+';
         nav.classList.remove('expanded');
-      } else {
+      } 
+    }
+
+    expandHeader(e) {
+      const nav = this.shadowRoot.querySelector('.collapsible-nav');
+      const button = this.shadowRoot.querySelector('.toggle-button');
+
+      if (!nav.classList.contains('expanded')) {
         button.innerText = '-';
         nav.classList.add('expanded');
+      }
+    }
+
+    toggleHeader(e) {
+      const nav = this.shadowRoot.querySelector('.collapsible-nav');
+
+      if (nav.classList.contains('expanded')) {
+        this.collapseHeader(e);
+      } else {
+        this.expandHeader(e);
       }
     }
 
