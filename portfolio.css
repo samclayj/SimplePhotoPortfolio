@@ -68,6 +68,11 @@ body {
     font-size: 18px;
   }
 
+  .fade {
+    animation: fade-in 0.2s !important;
+    opacity: 1;
+  }
+
   .desktop {
     display: block;
   }
@@ -160,7 +165,7 @@ body {
 }
 
 .fade {
-  animation: fade-in 0.1s;
+  animation: fade-in 0.5s;
   opacity: 1;
 }
 
