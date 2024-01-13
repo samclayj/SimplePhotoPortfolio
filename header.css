@@ -51,15 +51,10 @@ li:before {
 li.current-page::before {
   content: "-";
   padding-right: 3px;
-
 }
 
 a.current-page {
   font-style: italic;
-}
-
-.current-page:hover {
-  text-decoration: underline;
 }
 
 .collapsible-nav > div > ul > li:hover > a {
