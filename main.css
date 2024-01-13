@@ -5,6 +5,10 @@
   font: normal 1.2em 'Cutive Mono', monospace;
 }
 
+p {
+  font-size: .85em;
+}
+
 .desktop {
   display: none;
 }
@@ -90,6 +94,10 @@ body {
 @media only screen and (max-device-width: 480px) {
   :root {
     font: normal 3.5em 'Cutive Mono', monospace !important;
+  }
+
+  p {
+    font-size: .85em;
   }
 }
 
