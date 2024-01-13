@@ -31,7 +31,7 @@ Prereqs/Configuration:
 
 ## Adding Images
 
-* Add a portfolio folder to the `/images` directory.
+* Add a portfolio folder to the `/images` directory
 * Add a `desktop` and `mobile` directory.
 * Add the desktop and mobile sized images.
 * Create a new portfolio in `portfolios.js`, a new page for the porfolio, and an
@@ -41,6 +41,22 @@ Then commit and push to origin. The images are just stored in Github directly.
 
 I was using Netlify Large Media, but this was deprecated and the image resizing
 was not working.
+
+#### Install Web P Converter
+
+https://formulae.brew.sh/formula/webp
+https://developers.google.com/speed/webp/docs/using
+
+Run:
+
+```
+for file in images/*; do cwebp "$file" -o "${file%.*}.webp"; done
+
+rm *.jpg
+```
+
+To convert all images to webp format.
+
 
 # Local Development
 
