@@ -20,6 +20,15 @@ header {
   width: 100%;
 
   display: flex !important;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.header-row {
+  min-height: 50px;
+  width: 100%;
+  display: flex !important;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: flex-start;
@@ -61,7 +70,7 @@ a.current-page {
 }
 
 
-header > div {
+.header-row > div {
   margin: auto;
 }
 
@@ -75,8 +84,6 @@ header > div {
   background-color: var(--header-color);
   color: var(--header-font);
   margin: 0;
-  position: fixed;
-  top: 50px;
   width: 100%;
 
   display: none;
@@ -150,11 +157,5 @@ a:hover {
   .header-right {
     padding-right: 12px;
     width: 20%;
-  }
-
-  header {
-    height: 3%;
-    min-height: 50px;
-    font-size: 0.875em;
   }
 }
