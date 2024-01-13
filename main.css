@@ -2,7 +2,7 @@
   --background-color: #fffefa;
   --header-color: #F2F2EE;
   --header-font: black;
-  font: normal 1em 'Cutive Mono', monospace;
+  font: normal 1.2em 'Cutive Mono', monospace;
 }
 
 .desktop {
@@ -87,10 +87,6 @@ body {
 }
 
 @media only screen and (min-width: 1000px) {
-  :root {
-    font-size: 18px;
-  }
-
   .desktop {
     display: block;
   }
@@ -114,7 +110,6 @@ body {
     min-height: 40px;
     border-top: 1px solid black;
     color: var(--header-font);
-    font-size: 0.875em;
     margin: 0;
     position: fixed;
     bottom: 0;
