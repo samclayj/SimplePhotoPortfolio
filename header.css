@@ -25,15 +25,37 @@ header {
   align-items: flex-start;
 }
 
+ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+li {
+  padding-left: 1em;
+  text-indent: -1em;
+}
+
+li:before {
+  content: "+";
+  padding-right: 3px;
+}
+
 .current-page {
   font-style: italic;
 }
+
+/* special symbol after selected page.
+.current-page::after {
+  content: " \23DA"
+}
+*/
 
 .current-page:hover {
   text-decoration: underline;
 }
 
-.collapsible-nav > div > ul > li:hover {
+.collapsible-nav > div > ul > li:hover > a {
   text-decoration: underline;
   cursor: pointer;
 }
