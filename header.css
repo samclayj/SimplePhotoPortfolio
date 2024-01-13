@@ -30,6 +30,8 @@ header {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: flex-start;
+
+  font-size: 1em;
 }
 
 ul {
@@ -84,6 +86,8 @@ a.current-page {
   justify-content: space-evenly;
   align-items: flex-start;
   transition: all .5s ease-in-out;
+
+  font-size: .85em;
 }
 
 .expanded {
