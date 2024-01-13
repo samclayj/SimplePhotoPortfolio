@@ -41,6 +41,7 @@ function define(html) {
         this.shadowRoot.querySelectorAll(`[data-page=${currentPage}`);
       for (const element of elements) {
         element.classList.add('current-page');
+        element.parentElement.classList.add('current-page');
       }
     }
 

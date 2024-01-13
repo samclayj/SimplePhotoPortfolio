@@ -41,15 +41,15 @@ li:before {
   padding-right: 3px;
 }
 
-.current-page {
-  font-style: italic;
+li.current-page::before {
+  content: "-";
+  padding-right: 3px;
+
 }
 
-/* special symbol after selected page.
-.current-page::after {
-  content: " \23DA"
+a.current-page {
+  font-style: italic;
 }
-*/
 
 .current-page:hover {
   text-decoration: underline;
