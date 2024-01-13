@@ -1,5 +1,5 @@
 :root {
-  --background-color: white;
+  --background-color: #fffefa;
   --header-color: #F2F2EE;
   --header-font: black;
   font: normal 1em 'Cutive Mono', monospace;
@@ -153,9 +153,6 @@ body {
     text-align: right;
     width: 50%;
     padding-right: 7px;
-  }
-
-  .center-holder {
   }
 }
 

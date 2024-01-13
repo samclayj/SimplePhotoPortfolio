@@ -61,6 +61,7 @@ header > div {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: flex-start;
+  transition: all .5s ease-in-out;
 }
 
 .expanded {

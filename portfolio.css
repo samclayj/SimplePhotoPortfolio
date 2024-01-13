@@ -60,7 +60,7 @@ body {
   /* Do not repeat the image */
 
 
-  opacity: 1;
+  opacity: 0;
 }
 
 @media only screen and (min-width: 1000px) {
@@ -87,7 +87,6 @@ body {
   }
 
   footer {
-    height: 2.5%;
     min-height: 40px;
     border-top: 1px solid black;
     color: var(--header-font);
@@ -146,14 +145,14 @@ body {
   top: 50%;
   left: 50%;
 
-  opacity: 1;
+  opacity: 0;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 
 @keyframes fade-in {
   0% {
-    opacity: 1;
+    opacity: 0;
   }
 
   100% {
@@ -175,10 +174,13 @@ footer>div {
   opacity: 0;
 }
 
-.about-container {
-  width: 90%;
-  max-width: 800px;
-  margin: auto;
-  position: relative;
-  top: 40%;
+.center-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align:center;
+}
+
+.footer-left:hover, .footer-right:hover {
+  background-color: var(--header-color);
 }
