@@ -102,7 +102,6 @@ body {
     align-items: flex-start;
   }
 
-
   footer>div {
     margin: auto;
     display: block !important;
@@ -163,6 +162,10 @@ body {
 .fade {
   animation: fade-in 0.1s;
   opacity: 1;
+}
+
+footer {
+  display: none;
 }
 
 footer>div {
