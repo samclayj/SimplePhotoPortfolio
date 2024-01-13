@@ -75,7 +75,7 @@ body {
   display: flex;
   height: 0;
   /* Ensures that the div grows to height. 4x5 ratio is 80%. */
-  padding-top: 80%;
+  padding-top: 85%;
   width: 100%;
   background-position: center;
   background-size: contain;
