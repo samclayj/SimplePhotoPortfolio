@@ -9,8 +9,6 @@
 header {
   z-index: 999;
 
-  min-height: 50px;
-
   border-bottom: 1px solid black;
   background-color: var(--header-color);
   color: var(--header-font);
@@ -101,6 +99,10 @@ a.current-page {
   border-bottom: 1px solid black;
   width: 100%;
   padding: 10px 20px;
+}
+
+.collapsible-nav > div:last-child {
+  border-bottom: none;
 }
 
 a:visited, a:active, a:link,  a {
