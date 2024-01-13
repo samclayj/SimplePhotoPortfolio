@@ -202,10 +202,12 @@ footer>div {
 }
 
 .about-container {
-  max-width: 800px;
+  margin: 15px;
+  max-width: 815px;
 }
 
 .statement-container {
-  max-width: 800;
+  margin: 15px;
+  max-width: 815px;
 }
 
