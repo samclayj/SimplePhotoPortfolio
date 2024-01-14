@@ -38,7 +38,7 @@ function define(html) {
     highlightCurrentPage() {
       const currentPage = this.attributes.page.value;
       const elements =
-        this.shadowRoot.querySelectorAll(`[data-page=${currentPage}`);
+        this.shadowRoot.querySelectorAll(`[data-page=${currentPage}]`);
       for (const element of elements) {
         element.classList.add('current-page');
         element.parentElement.classList.add('current-page');

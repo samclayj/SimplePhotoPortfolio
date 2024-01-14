@@ -5,6 +5,10 @@
   font: normal 1.2em 'Cutive Mono', monospace;
 }
 
+b {
+  font-weight: bold;
+}
+
 p {
   font-size: .85em;
 }
