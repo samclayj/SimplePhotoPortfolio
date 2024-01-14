@@ -8,8 +8,7 @@
 
 **Netlify for Photo Portfolio**
 
-* This combined with the Netlify CDN, and Fastmail for email should totally satisfy my entire photo portfolio use-case, for way less than the Squarespace cost (~$20/month). Plus, it’s more customizable and low maintenance with the “deploy on git push” options.
-
+* This combined with Fastmail for email should totally satisfy my entire photo portfolio use-case, for way less than the Squarespace cost (~$20/month). Plus, it’s more customizable and low maintenance with the “deploy on git push” options.
 
 ## Analytics
 
@@ -36,7 +35,7 @@ Then commit and push to origin. The images are just stored in Github directly.
 I was using Netlify Large Media, but this was deprecated and the image resizing
 was not working.
 
-#### Install Web P Converter
+#### Install Web P Converter and Convert Images
 
 https://formulae.brew.sh/formula/webp
 https://developers.google.com/speed/webp/docs/using
@@ -45,12 +44,15 @@ Run:
 
 ```
 for file in images/*; do cwebp "$file" -o "${file%.*}.webp"; done
-
-rm *.jpg
 ```
 
 To convert all images to webp format.
 
+```
+rm *.jpg
+```
+
+To delete the non-converted images.
 
 # Local Development
 
