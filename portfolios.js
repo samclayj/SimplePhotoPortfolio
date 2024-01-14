@@ -127,11 +127,10 @@ function definePortfolio(html) {
       this.galleryIndex = 0;
       this.galleryElement = this.shadowRoot.getElementById('gallery');
       this.setImage(this.currentGallery[0]);
-      this.init(2000);
+      this.init(1000);
     }
 
     isMobile() {
-      console.log("MOBILE");
       return this.width <= MOBILE_WIDTH;
     }
 
@@ -173,7 +172,6 @@ function definePortfolio(html) {
     }
 
     nextImage() {
-      console.log('next image');
       this.galleryIndex = this.getNextIndex();
       this.setImage(this.currentGallery[this.galleryIndex]);
       if (this.galleryIndex == this.lastLoaded) {
@@ -205,7 +203,6 @@ function definePortfolio(html) {
       const container = this.shadowRoot.querySelector('.mobile-container');
       container.innerHTML = '';
       for (const imagePath of this.currentGallery) {
-        console.log(`Adding image ${imagePath}`);
         const image = new Image();
         image.loading = 'lazy';
         image.src = getImageUrl(this.galleryName, 'mobile', imagePath);
