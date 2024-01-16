@@ -53,6 +53,7 @@ const samRayburn = [
   'Sam Rayburn-10.webp',
   'Sam Rayburn-11.webp',
   'Sam Rayburn-12.webp',
+  'Sam Rayburn-13.webp',
 ];
 
 const galleries = {
