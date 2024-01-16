@@ -40,8 +40,24 @@ const urbanBayou = [
   'Big Rich-20.webp',
 ];
 
+const samRayburn = [
+  'Sam Rayburn-1.webp',
+  'Sam Rayburn-2.webp',
+  'Sam Rayburn-3.webp',
+  'Sam Rayburn-4.webp',
+  'Sam Rayburn-5.webp',
+  'Sam Rayburn-6.webp',
+  'Sam Rayburn-7.webp',
+  'Sam Rayburn-8.webp',
+  'Sam Rayburn-9.webp',
+  'Sam Rayburn-10.webp',
+  'Sam Rayburn-11.webp',
+  'Sam Rayburn-12.webp',
+];
+
 const galleries = {
   'fear_of_water' : fearOfWater,
+  'sam_rayburn' : samRayburn,
   'urban_bayou' : urbanBayou,
 }
 
