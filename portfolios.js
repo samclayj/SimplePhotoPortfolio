@@ -56,9 +56,20 @@ const samRayburn = [
   'Sam Rayburn-13.webp',
 ];
 
+const saltMarsh = [
+  'Salt Marsh-1.webp',
+  'Salt Marsh-2.webp',
+  'Salt Marsh-3.webp',
+  'Salt Marsh-4.webp',
+  'Salt Marsh-5.webp',
+  'Salt Marsh-6.webp',
+  'Salt Marsh-7.webp',
+];
+
 const galleries = {
   'fear_of_water' : fearOfWater,
   'sam_rayburn' : samRayburn,
+  'salt_marsh' : saltMarsh,
   'urban_bayou' : urbanBayou,
 }
 
