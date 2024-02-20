@@ -2,4 +2,4 @@ My photographic practice explores inconsistencies. A city whose natural preserve
 
 It also explores ironies. Cutting the grass while building natural grass preserves. The irony of a city that finds itself in flux. A city based on an industry that has long been at the whim of the global economy, and now finds itself forced to adapt. Companies that once denounced climate change claiming that they've always had our best interests at heart. These same industries shaping strange environments that have now become normal - people coexisting with the factories, worshiping and picnicking with smokestacks in the distance.
 
-Set in the city of Houston, *Big Rich* engulfs the viewer in these inconsistencies by documenting a reality shaped by many opposing forces. ~~The~~ viewer is left to consider how this state came to be, what this future holds, and what their part in this future might be.
+Set in the city of Houston, *Big Rich* engulfs the viewer in these inconsistencies by documenting a reality shaped by many opposing forces. The viewer is left to consider how this state came to be, what this future holds, and what their part in this future might be.
