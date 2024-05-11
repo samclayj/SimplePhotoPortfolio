@@ -44,6 +44,9 @@ Run:
 
 ```
 for file in images/*; do cwebp "$file" -o "${file%.*}.webp"; done
+
+for file in ./*; do cwebp "$file" -o "${file%.*}.webp"; done
+
 ```
 
 To convert all images to webp format.
