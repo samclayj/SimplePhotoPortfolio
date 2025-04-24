@@ -17,7 +17,7 @@ const fearOfWater = [
 
 
 // Add support for the mobile images. Probably rename.
-const urbanBayou = [
+const bigRich = [
   'Big Rich-1.webp',
   'Big Rich-2.webp',
   'Big Rich-3.webp',
@@ -71,7 +71,7 @@ const galleries = {
   'fear_of_water' : fearOfWater,
   'sam_rayburn' : samRayburn,
   'salt_marsh' : saltMarsh,
-  'urban_bayou' : urbanBayou,
+  'big_rich' : bigRich,
 }
 
 const MOBILE_WIDTH = 999;
