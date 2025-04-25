@@ -88,14 +88,14 @@ const debounce = (callback, wait) => {
 }
 
 function getImageUrl(galleryName, format, imagePath) {
-  return `images/${galleryName}/${format}/${imagePath}`
+  return `/images/${galleryName}/${format}/${imagePath}`
 }
 
 function getCssUrl(galleryName, format, imagePath) {
-  return `url('images/${galleryName}/${format}/${imagePath}')`
+  return `url('/images/${galleryName}/${format}/${imagePath}')`
 }
 
-fetch("portfolio.html")
+fetch("/components/portfolio.html")
   .then(stream => stream.text())
   .then(text => definePortfolio(text));
 
