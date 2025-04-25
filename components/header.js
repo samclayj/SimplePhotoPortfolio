@@ -1,4 +1,4 @@
-fetch("/header.html")
+fetch("/components/header.html")
   .then(stream => stream.text())
   .then(text => define(text));
 
