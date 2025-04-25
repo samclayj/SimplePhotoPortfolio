@@ -1,10 +1,10 @@
 <html lang="en">
-<title>Salt Marsh</title>
-<meta name="description" content="Salt Marsh is a project that showcases the work of Sam Jentsch." />
+<title>Big Rich Statement</title>
+<meta name="description" content="Statement on Big Rich." />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="keywords" content="Salt Marsh, Sam Jentsch, photography, portfolio, Bay Area, California, art, artist" />
+<meta name="keywords" content="Big Rich, Sam Jentsch, photography, portfolio, Houston, Texas, art, artist" />
 
-<link rel="stylesheet" type="text/css" href="main.css">
+<link rel="stylesheet" type="text/css" href="/main.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
@@ -13,13 +13,19 @@
 <!--Set Safari UI Bar color-->
 <meta name="theme-color" content="#F2F2EE" media="(prefers-color-scheme: light)">
 
-<script src="/components/portfolios.js"></script>
 <script src="/components/header.js"></script>
+<script src="/components/text_processor.js"></script>
 </head>
 
 <body>
-  <custom-header page="salt_marsh" project="Salt Marsh"></custom-header>
-  <custom-portfolio gallery="salt_marsh"></custom-portfolio>
+  <custom-header page="big_rich_statement" project="Big Rich"></custom-header>
+
+  <div class="center-holder">
+    <div class="statement-container">
+      <div id="statement-image-1" class="statement-image"></div>
+      <div data-page-text="/pages/big_rich_statement.md"></div>
+    </div>
+  </div>
 </body>
 
 </html>
