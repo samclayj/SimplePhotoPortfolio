@@ -1,8 +1,17 @@
+/* Root Variables */
 :root {
   --background-color: #fffefa;
   --header-color: #F2F2EE;
-  --header-font: black;
-  font: normal 1.2em 'Cutive Mono', monospace;
+  --text-color: black;
+  --font-family: 'Cutive Mono', monospace;
+}
+
+/* Typography */
+body {
+  background-color: var(--background-color, #fffefa);
+  margin: 0;
+  height: 100%;
+  font: normal 1.2em var(--font-family);
 }
 
 b {
@@ -10,42 +19,30 @@ b {
 }
 
 p {
-  font-size: .85em;
+  font-size: 0.85em;
 }
 
+a,
+a:visited,
+a:active,
+a:link {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--text-color);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Layout */
 .desktop {
   display: none;
 }
 
 .mobile {
   display: block;
-}
-
-body {
-  background-color: var(--background-color);
-  margin: 0;
-}
-
-a:visited,
-a:active,
-a:link,
-a {
-  color: black;
-}
-
-a {
-  text-decoration: none;
-}
-
-
-a:hover {
-  color: black;
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-body {
-  height: 100%;
 }
 
 .desktop-container {
@@ -69,19 +66,14 @@ body {
   min-height: 100px;
   min-width: 90%;
   background-position: center;
-  /* Center the image */
   background-size: contain;
   background-repeat: no-repeat;
-  /* Do not repeat the image */
-
-
   opacity: 0;
 }
 
 .statement-image {
   display: flex;
   height: 0;
-  /* Ensures that the div grows to height. 4x5 ratio is 80%. */
   padding-top: 85%;
   width: 100%;
   background-position: center;
@@ -94,14 +86,112 @@ body {
   background-image: url('images/big_rich/statement/Statement-1.webp');
 }
 
-/* For Phones having small font*/
+/* Footer */
+footer {
+  height: 2.5%;
+  min-height: 40px;
+  border-top: 1px solid var(--text-color);
+  color: var(--text-color);
+  margin: 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+footer > div {
+  margin: auto;
+  display: block !important;
+}
+
+footer > div:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+footer > div > p {
+  text-align: center;
+}
+
+.footer-left {
+  text-align: left;
+  border-right: 1px solid var(--text-color);
+  width: 50%;
+  padding-left: 7px;
+}
+
+.footer-right {
+  text-align: right;
+  width: 50%;
+  padding-right: 7px;
+}
+
+/* Centered Image */
+.image-centered {
+  height: 80%;
+  width: 95%;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+}
+
+/* Animations */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade {
+  animation: fade-in 1s;
+  opacity: 1;
+}
+
+/* Utility Classes */
+footer > div {
+  display: none;
+}
+
+.pre-load {
+  z-index: -1;
+  opacity: 0;
+}
+
+.center-holder {
+  position: relative;
+  top: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 5%);
+}
+
+.about-container,
+.statement-container {
+  margin: 15px;
+  max-width: 815px;
+}
+
+/* Media Queries */
 @media only screen and (max-device-width: 480px) {
   :root {
-    font: normal 3.5em 'Cutive Mono', monospace !important;
+    font: normal 3.5em var(--font-family) !important;
   }
 
   p {
-    font-size: .85em;
+    font-size: 0.85em;
   }
 }
 
@@ -123,109 +213,4 @@ body {
   .mobile-container {
     display: none;
   }
-
-  footer {
-    height: 2.5%;
-    min-height: 40px;
-    border-top: 1px solid black;
-    color: var(--header-font);
-    margin: 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: flex-start;
-  }
-
-
-  footer>div {
-    margin: auto;
-    display: block !important;
-  }
-
-  footer>div:hover {
-    cursor: pointer;
-    text-decoration: underline;
-  }
-
-  footer>div>p {
-    text-align: center;
-  }
-
-  .footer-left {
-    text-align: left;
-    border-right: 1px solid black;
-    width: 50%;
-    padding-left: 7px;
-  }
-
-  .footer-right {
-    text-align: right;
-    width: 50%;
-    padding-right: 7px;
-  }
-}
-
-.image-centered {
-  height: 80%;
-  width: 95%;
-  background-position: center;
-  /* Center the image */
-  background-size: contain;
-  background-repeat: no-repeat;
-  /* Do not repeat the image */
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-
-  opacity: 0;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-.fade {
-  animation: fade-in 1s;
-  opacity: 1;
-}
-
-footer>div {
-  display: none;
-}
-
-.pre-load {
-  z-index: -1000;
-  opacity: 0;
-}
-
-.center-holder {
-  position: relative;
-  top: 5%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: calc(100vh - 5%);
-}
-
-.about-container {
-  margin: 15px;
-  max-width: 815px;
-}
-
-.statement-container {
-  margin: 15px;
-  max-width: 815px;
 }
