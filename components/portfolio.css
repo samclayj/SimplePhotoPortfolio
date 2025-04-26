@@ -186,9 +186,10 @@ footer>div {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align:center;
+  text-align: center;
 }
 
-.footer-left:hover, .footer-right:hover {
+.footer-left:hover,
+.footer-right:hover {
   background-color: var(--header-color);
 }

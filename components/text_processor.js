@@ -29,21 +29,21 @@ function markdownConvert(line) {
 
 function processText() {
   const elements =
-      document.querySelectorAll(`[${dataPageText}]`);
+    document.querySelectorAll(`[${dataPageText}]`);
 
   for (const element of elements) {
     const filePath = element.getAttribute(`${dataPageText}`);
     fetch(`${filePath}`)
-    .then(response => response.blob())
-    .then(blob => blob.text())
-    .then(markdown => {
-      const splitLines = markdown.split("\n");
-      let elementHtml = '';
-      for (const line of splitLines) {
-        elementHtml += `<p>${markdownConvert(line)}</p>`;
-      }
-      element.innerHTML = elementHtml;
-    });
+      .then(response => response.blob())
+      .then(blob => blob.text())
+      .then(markdown => {
+        const splitLines = markdown.split("\n");
+        let elementHtml = '';
+        for (const line of splitLines) {
+          elementHtml += `<p>${markdownConvert(line)}</p>`;
+        }
+        element.innerHTML = elementHtml;
+      });
 
   }
 }

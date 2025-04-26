@@ -68,10 +68,10 @@ const saltMarsh = [
 ];
 
 const galleries = {
-  'fear_of_water' : fearOfWater,
-  'sam_rayburn' : samRayburn,
-  'salt_marsh' : saltMarsh,
-  'big_rich' : bigRich,
+  'fear_of_water': fearOfWater,
+  'sam_rayburn': samRayburn,
+  'salt_marsh': saltMarsh,
+  'big_rich': bigRich,
 }
 
 const MOBILE_WIDTH = 999;

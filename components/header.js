@@ -26,12 +26,12 @@ function define(html) {
           e.stopPropagation();
         });
       this.addEventListener('mouseenter', e => {
-          this.expandHeader();
-          e.stopPropagation();
+        this.expandHeader();
+        e.stopPropagation();
       });
       this.addEventListener('mouseleave', e => {
-          this.collapseHeader();
-          e.stopPropagation();
+        this.collapseHeader();
+        e.stopPropagation();
       });
     }
 
@@ -52,7 +52,7 @@ function define(html) {
       if (nav.classList.contains('expanded')) {
         button.innerText = '+';
         nav.classList.remove('expanded');
-      } 
+      }
     }
 
     expandHeader(e) {

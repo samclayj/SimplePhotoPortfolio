@@ -59,13 +59,13 @@ a.current-page {
   font-style: italic;
 }
 
-.collapsible-nav > div > ul > li:hover > a {
+.collapsible-nav>div>ul>li:hover>a {
   text-decoration: underline;
   cursor: pointer;
 }
 
 
-.header-row > div {
+.header-row>div {
   margin: auto;
 }
 
@@ -94,22 +94,27 @@ a.current-page {
   display: flex;
 }
 
-.collapsible-nav > div {
+.collapsible-nav>div {
   border-bottom: 1px solid black;
   width: 100%;
   padding: 10px 20px;
 }
 
-.collapsible-nav > div:last-child {
+.collapsible-nav>div:last-child {
   border-bottom: none;
 }
 
-a:visited, a:active, a:link,  a {
+a:visited,
+a:active,
+a:link,
+a {
   color: black;
 }
+
 a {
   text-decoration: none;
 }
+
 a:hover {
   color: black;
   cursor: pointer;
@@ -146,6 +151,7 @@ a:hover {
   .desktop {
     display: block;
   }
+
   .mobile {
     display: none;
   }
