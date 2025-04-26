@@ -64,7 +64,6 @@ a.current-page {
   cursor: pointer;
 }
 
-
 .header-row>div {
   margin: auto;
 }
@@ -109,9 +108,6 @@ a:active,
 a:link,
 a {
   color: black;
-}
-
-a {
   text-decoration: none;
 }
 

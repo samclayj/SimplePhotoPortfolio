@@ -1,32 +1,3 @@
-/* Root Variables */
-:root {
-  --background-color: #fffefa;
-  --header-color: #F2F2EE;
-  --text-color: black;
-  --font-family: 'Cutive Mono', monospace;
-}
-
-/* Typography */
-body {
-  background-color: var(--background-color);
-  margin: 0;
-  height: 100%;
-}
-
-a,
-a:visited,
-a:active,
-a:link {
-  color: var(--text-color);
-  text-decoration: none;
-}
-
-a:hover {
-  color: var(--text-color);
-  cursor: pointer;
-  text-decoration: underline;
-}
-
 /* Layout */
 .desktop {
   display: none;
@@ -120,10 +91,6 @@ footer > div {
 
 /* Media Queries */
 @media only screen and (min-width: 1000px) {
-  :root {
-    font-size: 18px;
-  }
-
   .fade {
     animation: fade-in 0.2s;
     opacity: 1;
