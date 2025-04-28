@@ -24,6 +24,9 @@ Prereqs/Configuration:
 
 ## Adding Images
 
+Desktop: 3000px Long Edge
+Mobile: 1200px Long Edge
+
 * Add a portfolio folder to the `/images` directory
 * Add a `desktop` and `mobile` directory.
 * Add the desktop and mobile sized images.
