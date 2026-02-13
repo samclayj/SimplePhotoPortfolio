@@ -36,8 +36,6 @@ const bigRich = [
   'Big Rich-16.webp',
   'Big Rich-17.webp',
   'Big Rich-18.webp',
-  'Big Rich-19.webp',
-  'Big Rich-20.webp',
 ];
 
 const samRayburn = [
