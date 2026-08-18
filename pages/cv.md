@@ -19,6 +19,8 @@ Mapping Perspectives, Fotofest, Throughline Collective, Houston, Texas
 
 **Group Exhibitions**
 
+**2026:** Texas Medical Center Orchestra & HCP, *Russian Fireworks*, Houston, Texas
+
 **2025:** Houston Center for Photography Print Auction, Houston, Texas
 
 **Organizations**
